@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Laravel Add To Shopping Cart</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"> 
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.0/dist/jquery.min.js"></script>
+    <style>
+        .card-body {
+            /* width: 100%; */
+        }
+    </style>
+</head>
+<body>
+<nav class="navbar navbar-expand-sm bg-primary navbar-dark">
+    <div class="container">
+    <!-- <ul class="navbar-nav">
+        <li class="nav-item">
+            <a class="nav-link" href="#">Cairocoders</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link active" href="{{ url('/home') }}">Home</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#">About</a>
+        </li>
+    </ul> -->
+    <a class="btn btn-outline-dark" href="{{ route('shopping.cart') }}">
+        <i  aria-hidden="true"></i> <span class="badge bg-danger">{{ count((array) session('cart')) }}</span>
+    </a>
+  </div>
+</nav>
+<div class="container mt-4">
+    <h3 class="mb-3">รายวิชาที่ต้องการสมัคร</h3>
+    @if(session('success'))
+        <div class="alert alert-success">
+          {{ session('success') }}
+        </div> 
+    @endif
+    @yield('content')
+</div>
+   
+@yield('scripts')
+</body>
+</html>
