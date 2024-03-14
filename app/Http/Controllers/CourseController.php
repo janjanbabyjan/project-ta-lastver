@@ -15,12 +15,14 @@ class CourseController extends Controller
    
     public function userComplaint()
     {
-        return view('userComplaint');
+        $courses = Course::all();
+        return view('userComplaint', compact('courses'));
     }
 
     public function addToCart($id)
     {
         $course = Course::findOrFail($id);
+        $course = Course::with('professor')->findOrFail($id);
         $cart = session()->get('cart', []);
         if(isset($cart[$id])) {
             $cart[$id]['quantity']++;

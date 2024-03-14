@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-md-12">
             <div class="card">
-                <div class="card-header">เลือกรายวิชาที่ต้องการสมัคร</div>
+                <div class="card-header"><h4>ข้อมูลการสมัครผู้ช่วยสอน</h4></div>
                 <div class="card-body">
                     <div class=”panel-heading”>
 
@@ -35,10 +35,10 @@
                             <tr>
                                 <td>643021342-5</td>
                                 <td>สุพัตรา แพงจันทร์</td>
-                                <td>{{ $course->course_code }}</td>
-                                <td>{{ $course->course_name_english }}</td>
+                                <td>{{ $course->course_code }} {{ $course->course_name_english }}</td>
                                 <td>10-03-2567</td>
                                 <td>อนุมติ</td>
+                                <td>12-03-2567</td>
                                 <td></td>
                             </tr>
                             <!-- @endforeach -->
