@@ -9,21 +9,45 @@
                 <div class="card-body">
                     <div class=”panel-heading”>
 
-                        @foreach($books as $book)
+                        <!-- @foreach($courses as $course)
                         <div class="row align-items-center p">
-                            <p class="col-2">{{ $book->subject_id }}</p>
-                            <p class="col-5">{{ $book->name }}</p>
-                            <p class="col-1"><strong></strong>{{ $book->semester_id }}</p>
-                            <p class="col-3">{{ $book->author }}</p>
-                            <p class="col-1"><a href="{{ route('addbook.to.cart', $book->id) }}"
-                                    class="btn btn-outline-success">เลือก</a> </p>
+                            <p class="col-2">1</p>
+                            <p class="col-2">{{ $course->course_code }}</p>
+                            <p class="col-5">{{ $course->course_name_thai }}</p>
+                            <p class="col-1"><strong></strong>{{ $course->year }}</p>
+                            <p class="col-3">{{ $course->professor_id }}</p>
+                            
+                            
                         </div>
-                        @endforeach
-                        <div class="row justify-content-end col-2">
+                        @endforeach -->
+
+                        <table class="table">
+                            <tr>
+                                <th>รหัสนักศึกษา</th>
+                                <th>ชื่อ-นามสกุล</th>
+                                <th>รายวิชาที่สมัคร</th>
+                                <th>วันที่สมัคร</th>
+                                <th>สถานะการสมัคร</th>
+                                <th>วันที่อนุมัติ</th>
+                                <th>ความคิดเห็น</th>
+                            </tr>
+                            <!-- @foreach($courses as $course) -->
+                            <tr>
+                                <td>643021342-5</td>
+                                <td>สุพัตรา แพงจันทร์</td>
+                                <td>{{ $course->course_code }}</td>
+                                <td>{{ $course->course_name_english }}</td>
+                                <td>10-03-2567</td>
+                                <td>อนุมติ</td>
+                                <td></td>
+                            </tr>
+                            <!-- @endforeach -->
+                        </table>
+                        <!-- <div class="row justify-content-end col-2">
                             <a class="btn btn-outline-primary" href="{{ route('user.complaint') }}">
                                 ดูรายวิชาที่เลือก
                             </a>
-                        </div>
+                        </div> -->
                     </div>
                 </div>
             </div>

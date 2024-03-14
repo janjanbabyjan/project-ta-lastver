@@ -6,7 +6,7 @@
         <div class="col-md-12">
             <div class="card">
                 <div class="card-body">
-                    <div class=”panel-heading”>
+                    <div class="panel-heading">
                         <div class="row align-items-center p">
                             <p class="col-2">รหัสวิชา</p>
                             <p class="col-4">ชื่อวิชา</p>
@@ -18,10 +18,10 @@
                         @if(session('cart'))
                         @foreach(session('cart') as $id => $details)
                         <div class="row align-items-center p">
-                            <p class="col-2">{{ $details['subject_id'] }}</p>
-                            <p class="col-4">{{ $details['name'] }}</p>
-                            <p class="col-2">{{ $details['semester_id'] }}</p>
-                            <p class="col-3">{{ $details['author'] }}</p>
+                            <p class="col-2">{{ $details['course_code'] }}</p>
+                            <p class="col-4">{{ $details['course_name_thai'] }}</p>
+                            <p class="col-2">{{ $details['year'] }}</p>
+                            <p class="col-3">{{ $details['professor_id'] }}</p>
                             <a class="btn btn-outline-danger btn-sm delete-product col-1"><i class="fa fa-trash-o"></i></a>
                         </div>
                         @endforeach
@@ -30,8 +30,7 @@
 
                     <div class="row justify-content-between">
                         <div class="col-2">
-                            <a href="{{ url('/user-selectsubject') }}" class="btn btn-primary"><i
-                                    class="fa fa-angle-left"></i>เลือกวิชา</a>
+                            <a href="{{ url('/user-selectsubject') }}" class="btn btn-primary"><i class="fa fa-angle-left"></i>เลือกวิชา</a>
                         </div>
                         <div class="col-4"></div>
                         <div class="col-2"></div>
@@ -57,7 +56,7 @@
         e.preventDefault();
         var ele = $(this);
         $.ajax({
-            url: '{{ route('update.sopping.cart') }}',
+            url: '{{ route('update.shopping.cart') }}',
             method: "patch",
             data: {
                 _token: '{{ csrf_token() }}',

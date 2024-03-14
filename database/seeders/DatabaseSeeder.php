@@ -21,5 +21,21 @@ class DatabaseSeeder extends Seeder
         //     'password' => '12345678',
         //     'type' => '0',
         // ]);
+
+        // $this->call([
+        //     CourseTypeSeeder::class,
+        //     // Other seeders if any
+        // ]);
+
+        // $this->call([
+        //     BranchSeeder::class,
+        //     ProfessorSeeder::class,
+        //     // Other seeders if any
+        // ]);
+
+        // $this->call([
+        //     ProfessorSeeder::class,
+        //     // Other seeders if any
+        // ]);
     }
 }

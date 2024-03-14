@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\BookController;
+use App\Http\Controllers\CourseController;
 
 /*
 |--------------------------------------------------------------------------
@@ -27,14 +28,20 @@ Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('ho
 //Normal Users Routes List
 Route::middleware(['auth', 'user-access:user'])->group(function () {
 
+        // Route::get('/home', [BookController::class, 'index']);
     Route::get('/home', [HomeController::class, 'index'])->name('home');
-    Route::get('/user-selectsubject', [BookController::class, 'selectSubject'])->name('select.subject');
 
-    // Route::get('/home', [BookController::class, 'index']);
-    Route::get('/userComplaint', [BookController::class, 'userComplaint'])->name('user.complaint');
-    Route::get('/book/{id}', [BookController::class, 'addBooktoCart'])->name('addbook.to.cart');
-    Route::patch('/update-userComplaint', [BookController::class, 'updateCart'])->name('update.sopping.cart');
-    Route::delete('/delete-userComplaint', [BookController::class, 'deleteProduct'])->name('delete.cart.product');
+    // Route::get('/user-selectsubject', [BookController::class, 'selectSubject'])->name('select.subject');
+    // Route::get('/userComplaint', [BookController::class, 'userComplaint'])->name('user.complaint');
+    // Route::get('/book/{id}', [BookController::class, 'addBooktoCart'])->name('addbook.to.cart');
+    // Route::patch('/update-userComplaint', [BookController::class, 'updateCart'])->name('update.sopping.cart');
+    // Route::delete('/delete-userComplaint', [BookController::class, 'deleteProduct'])->name('delete.cart.product');
+    Route::get('/user-selectCourse', [CourseController::class, 'selectCourse'])->name('select.courses');
+    Route::get('/userComplaint', [CourseController::class, 'userComplaint'])->name('user.complaint');
+    Route::get('/course/{id}', [CourseController::class, 'addToCart'])->name('add.to.cart');
+    Route::patch('/update-userComplaint', [CourseController::class, 'updateCart'])->name('update.sopping.cart');
+    Route::delete('/delete-userComplaint', [CourseController::class, 'deleteProduct'])->name('delete.cart.product');
+
 
 
 });
